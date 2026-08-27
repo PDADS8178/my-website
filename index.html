@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="工作常用工具快速入口">
+    <title>工作工具箱</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --navy: #173b73;
+            --blue: #2563a8;
+            --text: #243447;
+            --muted: #718096;
+            --bg: #f4f7fb;
+            --card: #ffffff;
+        }
+
+        body {
+            font-family:
+                "Microsoft JhengHei",
+                "Noto Sans TC",
+                Arial,
+                sans-serif;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, #e8f1ff 0, transparent 35%),
+                linear-gradient(135deg, #f5f8fc 0%, #eef3f9 100%);
+        }
+
+        .header {
+            text-align: center;
+            padding: 58px 20px 38px;
+        }
+
+        .header .badge {
+            display: inline-block;
+            padding: 7px 14px;
+            margin-bottom: 14px;
+            border-radius: 999px;
+            background: #e6effb;
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .header h1 {
+            font-size: clamp(32px, 5vw, 46px);
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: 0 auto;
+            padding-bottom: 58px;
+        }
+
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .tool-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 270px;
+            padding: 28px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            background: rgba(255,255,255,.94);
+            border: 1px solid rgba(23,59,115,.08);
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(23,59,115,.08);
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+
+        .tool-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 5px;
+            background: linear-gradient(90deg, #173b73, #4c8dcc);
+            opacity: .9;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(37,99,168,.22);
+            box-shadow: 0 18px 42px rgba(23,59,115,.15);
+        }
+
+        .icon-wrap {
+            width: 142px;
+            height: 142px;
+            margin: 2px auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .fallback-icon {
+            display: none;
+            font-size: 68px;
+        }
+
+        .tool-card h2 {
+            color: var(--navy);
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .tool-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.6;
+            min-height: 44px;
+        }
+
+        .go {
+            margin-top: 14px;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0 20px 28px;
+            color: #9aa7b7;
+            font-size: 12px;
+        }
+
+        @media (max-width: 850px) {
+            .tools {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .header {
+                padding-top: 42px;
+            }
+
+            .tools {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .tool-card {
+                min-height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="badge">WORK TOOLS</div>
+        <h1>🧰 工作工具箱</h1>
+        <p>工作常用工具快速入口</p>
+    </header>
+
+    <main class="container">
+        <section class="tools">
+
+            <a class="tool-card" href="pda.html">
+                <div class="icon-wrap">
+                    <img src="pda-icon.png" alt="PDA 掃描機">
+                    <span class="fallback-icon">📱</span>
+                </div>
+                <div>
+                    <h2>PDA 掃描機</h2>
+                    <p>PDA 掃描與資料處理工具</p>
+                    <div class="go">開始使用 →</div>
+                </div>
+            </a>
+
+            <a class="tool-card" href="barcode.html">
+                <div class="icon-wrap">
+                    <img src="barcode-icon.png" alt="條碼槍掃描器">
+                    <span class="fallback-icon">▦</span>
+                </div>
+                <div>
+                    <h2>條碼槍掃描器</h2>
+                    <p>條碼掃描與資料解碼工具</p>
+                    <div class="go">開始使用 →</div>
+                </div>
+            </a>
+
+            <a class="tool-card" href="yeartoweek.html">
+                <div class="icon-wrap">
+                    <span style="font-size:72px;">📅</span>
+                </div>
+                <div>
+                    <h2>年週對照表</h2>
+                    <p>快速查詢日期與 ISO 年週對照</p>
+                    <div class="go">開始使用 →</div>
+                </div>
+            </a>
+
+            <!-- 未來新增工具時，直接複製下面這張卡片即可
+            <a class="tool-card" href="tool4.html">
+                <div class="icon-wrap">
+                    <span style="font-size:72px;">🔧</span>
+                </div>
+                <div>
+                    <h2>新工具</h2>
+                    <p>工具說明</p>
+                    <div class="go">開始使用 →</div>
+                </div>
+            </a>
+            -->
+
+        </section>
+    </main>
+
+    <footer>
+        工作工具箱 © 2026
+    </footer>
+
+</body>
+</html>
